@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 15:24:09 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/05 16:21:00 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/07 17:35:04 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char    **parse_map(const char *filename);
+char    **read_map(const char *filename);
 
 #endif

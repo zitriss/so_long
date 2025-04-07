@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 13:58:23 by tlize             #+#    #+#             */
-/*   Updated: 2024/11/11 16:28:27 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/07 19:52:53 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 	char	*str_char;	
 
+	if (!str)
+		return(0);
 	i = 0;
 	str_char = (char *)str;
 	while (str_char[i])

@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:24:42 by tlize             #+#    #+#             */
-/*   Updated: 2025/03/13 17:14:53 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/07 17:55:32 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdio.h>
+# include "get_next_line.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
