@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 15:40:23 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 18:36:35 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:40:12 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_game
 	char	**clone;		
 }	t_game;
 
-//map
+//Fonctions de map
 void	draw_map(t_game *game);
 char	**read_map(const char *file, t_game *game);
 int		main(int argc, char **argv);
@@ -56,11 +56,11 @@ void	fill_map_from_file(const char *file, t_game *game);
 void	initialize_game_elements(t_game *game);
 void	fill_map_line(char *line, t_game *game, int row);
 
-//mouvements
+//Mouvements
 void	move_player(t_game *game, int dx, int dy);
 int		on_keypress(int keycode, t_game *game);
 
-//verification mouvements et elements de map
+//Verifs map et en jeu
 void	validate_map(t_game *game);
 void	error_message(t_game *game, int player_count,
 			int exit_count, int collectible_count);
@@ -71,7 +71,7 @@ int		is_valid_move(t_game *game, int new_x, int new_y);
 void	handle_tile_interaction(t_game *game, int new_x, int new_y);
 void	update_player_position(t_game *game, int new_x, int new_y);
 
-//verification de la jouabilite
+//Verif map finissable
 char	**clone_map(t_game *game);
 void	free_clone(t_game *game, int rows);
 void	flood_fill(t_game *game, int x, int y);
@@ -82,7 +82,7 @@ void	check_unreachable_collectibles(t_game *game,
 void	check_unreachable_exit(t_game *game, char **map,
 			int rows, int cols);
 
-//quitter
+//Quitter le jeu
 void	exit_game(t_game *game);
 void	exit_map(t_game *game);
 int		on_destroy_bouton(t_game *game);

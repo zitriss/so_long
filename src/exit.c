@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:16:19 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 16:39:21 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:40:33 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	exit_map(t_game *game)
 	int	i;
 
 	i = 0;
-	ft_printf("Libération de la carte...\n");
+	ft_printf("Libération de la carte.\n");
 	if (game->map)
 	{
 		while (i < game->rows)

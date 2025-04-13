@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:15:43 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 18:23:29 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:41:06 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	init_game(t_game *game, const char *map_file)
 	if (!game->wall_img || !game->floor_img || !game->player_img
 		|| !game->collectible_img || !game->exit_img)
 	{
-		perror("Error\nErreur de chargement des images\n");
+		perror("Erreur lors du chargement des images\n");
 		exit_game(game);
 	}
 	draw_map(game);
@@ -54,7 +54,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		perror("Error\nNombre d'arguments incorrect\n");
+		perror("Nombres d'arguments incorrect\n");
 		return (1);
 	}
 	init_game(&game, argv[1]);

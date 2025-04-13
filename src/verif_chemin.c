@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:22:06 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 16:29:04 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:45:02 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**clone_map(t_game *game)
 	game->clone = malloc(game->rows * sizeof(char *));
 	if (!game->clone)
 	{
-		perror("Error\nMemory allocation failed for map clone.\n");
+		perror("Probleme d'allocation.\n");
 		exit(0);
 	}
 	i = 0;
@@ -28,7 +28,7 @@ char	**clone_map(t_game *game)
 		game->clone[i] = ft_strdup(game->map[i]);
 		if (!game->clone[i])
 		{
-			perror("Error\nallocation a echoue.\n");
+			perror("Probleme d'allocation.\n");
 			while (--i >= 0)
 				free(game->clone[i]);
 			free(game->clone);
@@ -78,7 +78,7 @@ void	check_unreachable_collectibles(t_game *game,
 		{
 			if (map[y][x] == 'C' && game->clone[y][x] != 'V')
 			{
-				perror("Error\nCollectible non atteignable.\n");
+				perror("Chaussure hors de portee.\n");
 				free_clone(game, rows);
 				exit_map(game);
 				exit(0);
@@ -103,7 +103,7 @@ void	check_unreachable_exit(t_game *game, char **map,
 		{
 			if (map[y][x] == 'E' && game->clone[y][x] != 'V')
 			{
-				perror("Error\nSortie non atteignable.\n");
+				perror("Sortie inaccessible");
 				free_clone(game, rows);
 				exit_map(game);
 				exit(EXIT_FAILURE);

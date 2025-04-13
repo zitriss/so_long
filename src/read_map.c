@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:21:20 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 16:21:44 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:43:29 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	calculate_map_dimensions(const char *file, t_game *game)
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Error\nOuverture du fichier impossible\n");
+		perror("Ouverture de la carte impossible");
 		exit(0);
 	}
 	game->rows = 0;
@@ -45,7 +45,7 @@ void	allocate_map_memory(t_game *game)
 	game->map = malloc(game->rows * sizeof(char *));
 	if (!game->map)
 	{
-		perror("Error\nÉchec d'allocation mémoire pour la carte.\n");
+		perror("Échec d'allocation mémoire.\n");
 		exit_game(game);
 	}
 	while (i < game->rows)
@@ -59,13 +59,13 @@ void	fill_map_line(char *line, t_game *game, int row)
 {
 	if (!line)
 	{
-		perror("Error\nLigne invalide.\n");
+		perror("Ligne invalide.\n");
 		exit_game(game);
 	}
 	game->map[row] = malloc((game->cols + 1) * sizeof(char));
 	if (!game->map[row])
 	{
-		perror("Error\nÉchec d'allocation mémoire pour une ligne.\n");
+		perror("Échec d'allocation mémoire.\n");
 		exit_game(game);
 	}
 	ft_strncpy(game->map[row], line, game->cols);
@@ -81,7 +81,7 @@ void	fill_map_from_file(const char *file, t_game *game)
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Error\nImpossible d'ouvrir le fichier\n");
+		perror("Impossible d'ouvrir le fichier\n");
 		exit(0);
 	}
 	i = 0;
@@ -90,7 +90,7 @@ void	fill_map_from_file(const char *file, t_game *game)
 		line = get_next_line(fd);
 		if (!line)
 		{
-			perror("Error\nProblème lecture de la carte.\n");
+			perror("Problème lecture de la carte.\n");
 			exit_game(game);
 		}
 		fill_map_line(line, game, i);

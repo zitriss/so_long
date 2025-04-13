@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:20:29 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 16:21:17 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:42:12 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	handle_tile_interaction(t_game *game, int new_x, int new_y)
 		game->collectibles--;
 	if (game->map[new_y][new_x] == 'E' && game->collectibles == 0)
 	{
-		ft_printf("Vous avez reussi en %d mouvements\n", game->move_count);
+		ft_printf("Bravo !");
+		ft_printf("Nombre de mouvements :%d", game->move_count);
 		exit_game(game);
 	}
 }
@@ -53,7 +54,7 @@ void	update_player_position(t_game *game, int new_x, int new_y)
 	game->player_x = new_x;
 	game->player_y = new_y;
 	game->move_count++;
-	ft_printf("Mouvement numero : %d\n", game->move_count);
+	ft_printf("%d\n", game->move_count);
 	game->map[new_y][new_x] = 'P';
 }
 

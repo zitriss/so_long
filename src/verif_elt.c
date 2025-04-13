@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:22:46 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 16:27:48 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 18:45:51 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ void	error_message(t_game *game, int player_count,
 {
 	if (player_count != 1)
 	{
-		perror("Error\nnombre de joueurs incorrect.\n");
+		perror("Normalent il passe pas par la.\n");
 		exit_map(game);
 		exit(0);
 	}
 	if (exit_count != 1)
 	{
-		perror("Error\npas de sortie.\n");
+		perror("Pas de sortie.\n");
 		exit_map(game);
 		exit(0);
 	}
 	if (collectible_count < 1)
 	{
-		perror("Error\npas de collectible.\n");
+		perror("Pas de chaussure.\n");
 		exit_map(game);
 		exit(0);
 	}
