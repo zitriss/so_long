@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:28:14 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 20:17:59 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:46:47 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,14 @@ void	validate_walls_and_rectangle(t_game *game)
 	validate_rectangle(game);
 	validate_top_and_bottom_walls(game);
 	validate_side_walls(game);
+}
+
+void	validate_valid_char(char tile, t_game *game)
+{
+	if (tile != '0' && tile != '1')
+	{
+		perror("Error\nCaractere invalide\n");
+		exit_map(game);
+		exit(0);
+	}
 }

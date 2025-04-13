@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:22:46 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 20:17:50 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:44:56 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,8 @@ void	count_map_elements(t_game *game,
 				(*exit_count)++;
 			else if (tile == 'C')
 				(*collectible_count)++;
-			else if (tile != '0' && tile != '1')
-			{
-				perror("Error\nCaractere invalide\n");
-				exit_map(game);
-				exit(0);
-			}
+			else
+				validate_valid_char(tile, game);
 			x++;
 		}
 		y++;

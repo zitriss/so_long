@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 15:40:23 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 18:53:50 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:46:53 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	count_map_elements(t_game *game,
 int		is_valid_move(t_game *game, int new_x, int new_y);
 void	handle_tile_interaction(t_game *game, int new_x, int new_y);
 void	update_player_position(t_game *game, int new_x, int new_y);
+void	validate_valid_char(char tile, t_game *game);
 
 //Verif map finissable
 char	**clone_map(t_game *game);

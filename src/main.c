@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:15:43 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 20:26:43 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:46:29 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	check_extension(const char *filename)
 {
-	size_t	len = strlen(filename);
+	size_t	len;
 
+	len = ft_strlen(filename);
 	if (len < 5)
 		return (0);
 	return (strncmp(filename + len - 4, ".ber", 5) == 0);
