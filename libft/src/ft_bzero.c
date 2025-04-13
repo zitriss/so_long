@@ -6,11 +6,11 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:14:48 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 14:38:15 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 15:14:21 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

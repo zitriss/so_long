@@ -6,11 +6,11 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:22:25 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 14:38:19 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 15:14:13 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

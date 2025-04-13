@@ -6,11 +6,11 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:13:31 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 14:45:24 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 15:15:04 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

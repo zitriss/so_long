@@ -6,11 +6,11 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:25:52 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 14:52:15 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 15:15:53 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	ft_inlst(char s, const char *set)
 {

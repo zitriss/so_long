@@ -6,20 +6,25 @@
 #    By: tlize <tlize@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 15:12:54 by tlize             #+#    #+#              #
-#    Updated: 2025/04/13 14:54:15 by tlize            ###   ########.fr        #
+#    Updated: 2025/04/13 15:17:41 by tlize            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_DIR = src
+GNL_DIR = $(SRC_DIR)/gnl
 OBJ_DIR = obj
+INC_DIR = includes
 
-SRCS = $(wildcard $(SRC_DIR)/*.c)
-OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
+
+SRCS = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(GNL_DIR)/*.c)
+OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(wildcard $(SRC_DIR)/*.c)) \
+	   $(patsubst $(GNL_DIR)/%.c, $(OBJ_DIR)/gnl_%.o, $(wildcard $(GNL_DIR)/*.c))
+
+
 
 NAME = libft.a
-
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I$(INC_DIR)
 
 # == Couleurs pour les messages dans le terminal ==
 YELLOW = \033[1;33m
@@ -27,13 +32,15 @@ NC = \033[0m
 
 all:		$(NAME)
 
-# == Construction de la bibliothèque statique ==
 $(NAME):	$(OBJS)
 			ar rsc $(NAME) $(OBJS)
 			@echo "$(YELLOW)libft.a created successfully!$(NC)"
 
 # == Compilation des fichiers .c en .o ==
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/gnl_%.o: $(GNL_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):

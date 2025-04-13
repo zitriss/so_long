@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 14:26:36 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 15:15:01 by tlize            ###   ########.fr       */
+/*   Created: 2024/11/27 16:51:02 by tlize             #+#    #+#             */
+/*   Updated: 2025/04/13 15:11:22 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	*ft_memset(void *s, int c, size_t n)
-{
-	char	*s_char;
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
 
-	s_char = (char *)s;
-	while (n > 0)
-	{
-		s_char[n - 1] = c;
-		n--;
-	}
-	return (s);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+void	*ft_calloc(size_t nmemb, size_t size);
+size_t	ft_strlen(const char *str);
+
+#endif

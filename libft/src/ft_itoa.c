@@ -6,11 +6,11 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:30:18 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 14:41:20 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 15:14:45 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	get_num_length(int n)
 {
