@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:21:20 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 19:49:20 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:17:28 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	calculate_map_dimensions(const char *file, t_game *game)
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Ouverture de la carte impossible");
+		perror("Error\nOuverture de la carte impossible");
 		exit(0);
 	}
 	game->rows = 0;
@@ -45,7 +45,7 @@ void	allocate_map_memory(t_game *game)
 	game->map = malloc(game->rows * sizeof(char *));
 	if (!game->map)
 	{
-		perror("Échec d'allocation mémoire.\n");
+		perror("Error\nÉchec d'allocation mémoire.\n");
 		exit_game(game);
 	}
 	while (i < game->rows)
@@ -59,13 +59,13 @@ void	fill_map_line(char *line, t_game *game, int row)
 {
 	if (!line)
 	{
-		perror("Ligne invalide.\n");
+		perror("Error\nLigne invalide.\n");
 		exit_game(game);
 	}
 	game->map[row] = malloc((game->cols + 1) * sizeof(char));
 	if (!game->map[row])
 	{
-		perror("Échec d'allocation mémoire.\n");
+		perror("Error\nÉchec d'allocation mémoire.\n");
 		exit_game(game);
 	}
 	ft_strncpy(game->map[row], line, game->cols);
@@ -81,7 +81,7 @@ void	fill_map_from_file(const char *file, t_game *game)
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
-		perror("Impossible d'ouvrir le fichier\n");
+		perror("Error\nImpossible d'ouvrir le fichier\n");
 		exit(0);
 	}
 	i = 0;
@@ -90,7 +90,7 @@ void	fill_map_from_file(const char *file, t_game *game)
 		line = get_next_line(fd);
 		if (!line)
 		{
-			perror("Problème lecture de la carte.\n");
+			perror("Error\nProblème lecture de la carte.\n");
 			exit_game(game);
 		}
 		fill_map_line(line, game, i);

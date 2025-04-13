@@ -6,11 +6,20 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:15:43 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 19:45:51 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:26:43 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	check_extension(const char *filename)
+{
+	size_t	len = strlen(filename);
+
+	if (len < 5)
+		return (0);
+	return (strncmp(filename + len - 4, ".ber", 5) == 0);
+}
 
 char	**read_map(const char *file, t_game *game)
 {
@@ -42,7 +51,7 @@ void	init_game(t_game *game, const char *map_file)
 	if (!game->wall_img || !game->floor_img || !game->player_img
 		|| !game->collectible_img || !game->exit_img)
 	{
-		perror("Erreur lors du chargement des images\n");
+		perror("Error\nErreur lors du chargement des images\n");
 		exit_game(game);
 	}
 	draw_map(game);
@@ -54,7 +63,12 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		perror("Nombres d'arguments incorrect\n");
+		perror("Error\nNombres d'arguments incorrect\n");
+		return (1);
+	}
+	if (!check_extension(argv[1]))
+	{
+		ft_printf("Error\nIl faut un .ber\n");
 		return (1);
 	}
 	init_game(&game, argv[1]);

@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:28:14 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 19:49:08 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:17:59 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	validate_rectangle(t_game *game)
 	{
 		if ((int)ft_strlen(game->map[y]) != game->cols)
 		{
-			perror("Map non rectangulaire\n");
+			perror("Error\nMap invalide\n");
 			exit_map(game);
 			exit(0);
 		}
@@ -38,7 +38,7 @@ void	validate_top_and_bottom_walls(t_game *game)
 	{
 		if (game->map[0][x] != '1' || game->map[game->rows - 1][x] != '1')
 		{
-			perror("Murs incorrects\n");
+			perror("Error\nMap invalide\n");
 			exit_map(game);
 			exit(0);
 		}
@@ -55,7 +55,7 @@ void	validate_side_walls(t_game *game)
 	{
 		if (game->map[y][0] != '1' || game->map[y][game->cols - 1] != '1')
 		{
-			perror("Murs incorrects\n");
+			perror("Error\nMap invalide\n");
 			exit_map(game);
 			exit(0);
 		}

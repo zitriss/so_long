@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:22:46 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 19:55:44 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 20:17:50 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ void	error_message(t_game *game, int player_count,
 {
 	if (player_count != 1)
 	{
-		perror("Mauvais nombre de tralalero tralala.\n");
+		perror("Error\nMap invalide.\n");
 		exit_map(game);
 		exit(0);
 	}
 	if (exit_count != 1)
 	{
-		perror("Mauvais nombre de sortie.\n");
+		perror("Error\nMap invalide.\n");
 		exit_map(game);
 		exit(0);
 	}
 	if (collectible_count < 1)
 	{
-		perror("Pas de chaussure.\n");
+		perror("Error\nMap invalide.\n");
 		exit_map(game);
 		exit(0);
 	}
@@ -55,6 +55,12 @@ void	count_map_elements(t_game *game,
 				(*exit_count)++;
 			else if (tile == 'C')
 				(*collectible_count)++;
+			else if (tile != '0' && tile != '1')
+			{
+				perror("Error\nCaractere invalide\n");
+				exit_map(game);
+				exit(0);
+			}
 			x++;
 		}
 		y++;
