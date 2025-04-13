@@ -6,13 +6,11 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:50:43 by tlize             #+#    #+#             */
-/*   Updated: 2025/01/06 10:14:39 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 15:28:01 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
-#include <fcntl.h>
 
 static char	*strjoinfree(char *str, char *buffer)
 {

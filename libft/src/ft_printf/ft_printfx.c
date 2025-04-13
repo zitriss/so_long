@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printfx.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:51:02 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 15:28:10 by tlize            ###   ########.fr       */
+/*   Created: 2024/11/26 15:15:42 by tlize             #+#    #+#             */
+/*   Updated: 2025/04/13 15:28:27 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
+int	ft_printfx(unsigned int n, char special)
+{
+	char	*hex;
+	int		len;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t nmemb, size_t size);
-size_t	ft_strlen(const char *str);
-
-#endif
+	len = 0;
+	if (special == 'x')
+		hex = "0123456789abcdef";
+	else if (special == 'X')
+		hex = "0123456789ABCDEF";
+	else
+		return (0);
+	if (n == 0)
+		return (ft_printfc('0'));
+	if (n >= 16)
+		len += ft_printfx(n / 16, special);
+	ft_putchar_fd(hex[n % 16], 1);
+	return (len + 1);
+}

@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:51:02 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 15:28:10 by tlize            ###   ########.fr       */
+/*   Created: 2024/11/26 14:53:28 by tlize             #+#    #+#             */
+/*   Updated: 2025/04/13 15:27:02 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
+# include <stdint.h>
+# include <stdarg.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t nmemb, size_t size);
-size_t	ft_strlen(const char *str);
+int		ft_printf(const char *format, ...);
+int		ft_printfc(int s);
+int		ft_printfs(char *str);
+int		ft_printfp(void *ptr);
+int		ft_printfu(unsigned int n);
+int		ft_printfx(unsigned int n, char format);
+int		ft_printfd(int n);
 
 #endif

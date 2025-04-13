@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_printfd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 16:51:02 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 15:28:10 by tlize            ###   ########.fr       */
+/*   Created: 2024/11/27 15:28:04 by tlize             #+#    #+#             */
+/*   Updated: 2025/04/13 15:27:12 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <fcntl.h>
+int	ft_printfd(int n)
+{
+	int		count;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t nmemb, size_t size);
-size_t	ft_strlen(const char *str);
-
-#endif
+	count = 0;
+	if (n == -2147483648)
+		return (write(1, "-2147483648", 11));
+	if (n < 0)
+	{
+		n = -n;
+		count += write(1, "-", 1);
+	}
+	if (n >= 10)
+		count += ft_printfd(n / 10);
+	return (count + ft_printfc((n % 10) + '0'));
+}

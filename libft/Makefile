@@ -6,7 +6,7 @@
 #    By: tlize <tlize@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/13 15:12:54 by tlize             #+#    #+#              #
-#    Updated: 2025/04/13 15:17:41 by tlize            ###   ########.fr        #
+#    Updated: 2025/04/13 15:29:26 by tlize            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,10 @@ OBJ_DIR = obj
 INC_DIR = includes
 
 
-SRCS = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(GNL_DIR)/*.c)
+SRCS = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(GNL_DIR)/*.c)  $(wildcard $(PRINTF_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(wildcard $(SRC_DIR)/*.c)) \
-	   $(patsubst $(GNL_DIR)/%.c, $(OBJ_DIR)/gnl_%.o, $(wildcard $(GNL_DIR)/*.c))
+	   $(patsubst $(GNL_DIR)/%.c, $(OBJ_DIR)/gnl_%.o, $(wildcard $(GNL_DIR)/*.c)) \
+	   $(patsubst $(PRINTF_DIR)/%.c, $(OBJ_DIR)/printf_%.o, $(wildcard $(PRINTF_DIR)/*.c))
 
 
 
@@ -41,6 +42,9 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/gnl_%.o: $(GNL_DIR)/%.c | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/printf_%.o: $(PRINTF_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
