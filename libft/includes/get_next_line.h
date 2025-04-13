@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:51:02 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 15:28:10 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 16:49:25 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strchr(const char *s, int c);
-void	*ft_calloc(size_t nmemb, size_t size);
-size_t	ft_strlen(const char *str);
+char	*ftt_strjoin(char const *s1, char const *s2);
+char	*ftt_strchr(const char *s, int c);
+void	*ftt_calloc(size_t nmemb, size_t size);
+size_t	ftt_strlen(const char *str);
 
 #endif

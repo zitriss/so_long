@@ -6,13 +6,13 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 16:50:53 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 15:11:02 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 16:48:58 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ftt_strlen(const char *str)
 {
 	size_t	i;
 	char	*str_char;
@@ -24,13 +24,13 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ftt_strchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
 	if ((char)c == '\0')
-		return ((char *)s + ft_strlen(s));
+		return ((char *)s + ftt_strlen(s));
 	while (s[i])
 	{
 		if (s[i] == (char)c)
@@ -40,7 +40,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ftt_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -48,7 +48,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = (char *)malloc(sizeof(char) * (ftt_strlen(s1) + ftt_strlen(s2) + 1));
 	if (str == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -65,7 +65,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-static void	*ft_memset(void *s, int c, size_t n)
+static void	*ftt_memset(void *s, int c, size_t n)
 {
 	char	*s_char;
 
@@ -78,7 +78,7 @@ static void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ftt_calloc(size_t nmemb, size_t size)
 {
 	void	*pt;
 
@@ -92,6 +92,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	pt = malloc(nmemb * size);
 	if (!pt)
 		return (pt);
-	ft_memset(pt, '\0', (nmemb * size));
+	ftt_memset(pt, '\0', (nmemb * size));
 	return (pt);
 }

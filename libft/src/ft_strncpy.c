@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 14:53:28 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 16:56:32 by tlize            ###   ########.fr       */
+/*   Created: 2025/04/13 16:41:56 by tlize             #+#    #+#             */
+/*   Updated: 2025/04/13 16:42:09 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdint.h>
-# include <stdarg.h>
-# include "libft.h"
+char	*ft_strncpy(char *dest, const char *src, int n)
+{
+	int	val;
 
-int		ft_printf(const char *format, ...);
-int		ft_printfc(int s);
-int		ft_printfs(char *str);
-int		ft_printfp(void *ptr);
-int		ft_printfu(unsigned int n);
-int		ft_printfx(unsigned int n, char format);
-int		ft_printfd(int n);
-
-#endif
+	val = 0;
+	while (val < n && src[val] != '\0')
+	{
+		dest[val] = src[val];
+		val++;
+	}
+	while (val < n)
+	{
+		dest[val] = '\0';
+		val++;
+	}
+	return (dest);
+}
