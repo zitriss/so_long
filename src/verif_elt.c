@@ -6,7 +6,7 @@
 /*   By: tlize <tlize@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/13 16:22:46 by tlize             #+#    #+#             */
-/*   Updated: 2025/04/13 19:49:04 by tlize            ###   ########.fr       */
+/*   Updated: 2025/04/13 19:55:44 by tlize            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	error_message(t_game *game, int player_count,
 {
 	if (player_count != 1)
 	{
-		perror("Normalent il passe pas par la.\n");
+		perror("Mauvais nombre de tralalero tralala.\n");
 		exit_map(game);
 		exit(0);
 	}
 	if (exit_count != 1)
 	{
-		perror("Pas de sortie.\n");
+		perror("Mauvais nombre de sortie.\n");
 		exit_map(game);
 		exit(0);
 	}
